@@ -18,16 +18,23 @@
     <!-- CSS Implementing Plugins -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/common.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/all.min.css">
 </head>
 
 <body class="footer-offset">
-@include('layouts.partials.sidebar')
+<div class="main_container">
+        @include('layouts.partials.sidebar')
+    <!-- navbar start  -->
+    <div class="body_container">
+        @include('layouts.partials.header')
+        @yield('content')
 
-<main id="content" role="main" class="main pointer-event">
+    </div>
 
-    <!-- Content -->
-    @yield('content')
-    <!-- End Content -->
-</main>
+</div>
+
+<script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
+<script src="{{asset('assets')}}/js/popper.min.js"></script>
+
 </body>
 </html>
