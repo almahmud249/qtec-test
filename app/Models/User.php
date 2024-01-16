@@ -43,4 +43,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public const SUPERADMIN_ROLE = 'superadmin';
+    public const USER_ROLE = 'user';
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->hasRole(self::SUPERADMIN_ROLE);
+    }
+
+    public function isUser(): bool
+    {
+        return $this->hasRole(self::USER_ROLE);
+    }
 }
