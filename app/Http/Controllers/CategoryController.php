@@ -19,7 +19,7 @@ class CategoryController extends Controller
             'name' => 'required',
             'description' => 'required',
         ]);
-        $user = Category::create([
+        Category::create([
             'name' => $request->name,
             'description' => $request->description,
         ]);

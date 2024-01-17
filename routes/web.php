@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\FormSubmissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,9 @@ Route::middleware(['auth.check'])->group(function (){
 
         Route::get('/admin/form-create', [FormController::class, 'formCreate'])->name('form.create');
         Route::get('/admin/form-store', [FormController::class, 'formStore'])->name('form.store');
+
+        Route::get('/admin/form-fields-create', [FormSubmissionController::class, 'formFieldCreate'])->name('form.field.create');
+        Route::post('/admin/form-fields-store', [FormSubmissionController::class, 'formFieldStore'])->name('form.field.store');
     });
 });
 

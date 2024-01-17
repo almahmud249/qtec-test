@@ -19,7 +19,7 @@ return new class extends Migration
             // Add other fields based on your form field requirements
             $table->timestamps();
 
-            $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade');
+            $table->foreign('form_template_id')->references('id')->on('form_fields')->onDelete('cascade');
         });
     }
 

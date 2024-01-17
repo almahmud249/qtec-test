@@ -36,6 +36,14 @@
                         </p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.form.field.create')}}">
+                        <p class="menu_link">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="aside_link">Form Structure</span>
+                        </p>
+                    </a>
+                </li>
             @endif
         </ul>
     </aside>

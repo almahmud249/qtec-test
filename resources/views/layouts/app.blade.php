@@ -16,9 +16,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/common.css">
-    <link rel="stylesheet" href="{{asset('assets')}}/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    @stack('script')
+
 </head>
 
 <body class="footer-offset">
@@ -34,7 +41,9 @@
 </div>
 
 <script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
+
 <script src="{{asset('assets')}}/js/popper.min.js"></script>
+
 
 </body>
 </html>
