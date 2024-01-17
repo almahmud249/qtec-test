@@ -45,6 +45,14 @@
                     </a>
                 </li>
             @endif
+            <li>
+                <a href="{{route('user.submit.form')}}">
+                    <p class="menu_link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="aside_link">Form Submission</span>
+                    </p>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>

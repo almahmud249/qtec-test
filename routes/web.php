@@ -24,8 +24,12 @@ Route::middleware(['auth.check'])->group(function (){
     Route::get('/', function () {
         return view('welcome');
     });
+
     Route::group(['as' => 'user.'], function () {
         Route::get('/user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');
+        Route::get('/user/submit-form', [UserController::class, 'submitForm'])->name('submit.form');
+        Route::get('/user/get-form-template/{id}', [UserController::class, 'formTemplate'])->name('form.template');
+
     });
     Route::group(['as' => 'admin.'], function () {
         Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');
@@ -38,6 +42,7 @@ Route::middleware(['auth.check'])->group(function (){
 
         Route::get('/admin/form-fields-create', [FormSubmissionController::class, 'formFieldCreate'])->name('form.field.create');
         Route::post('/admin/form-fields-store', [FormSubmissionController::class, 'formFieldStore'])->name('form.field.store');
+        Route::get('/admin/view-form/{id}', [FormSubmissionController::class, 'viewForm'])->name('view.form');
     });
 });
 

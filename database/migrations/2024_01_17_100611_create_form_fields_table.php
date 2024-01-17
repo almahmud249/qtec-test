@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('form_fields', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('form_template_id');
-            $table->string('label');
-            $table->string('type'); // text, checkbox, etc.
-            // Add other fields based on your form field requirements
+            $table->string('form_data');
             $table->timestamps();
 
             $table->foreign('form_template_id')->references('id')->on('form_fields')->onDelete('cascade');
