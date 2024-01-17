@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -15,12 +18,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
-    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+Route::middleware(['auth.check'])->group(function (){
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::group(['as' => 'user.'], function () {
+        Route::get('/user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');
+    });
+    Route::group(['as' => 'admin.'], function () {
+        Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');
+
+        Route::get('/admin/category-create', [CategoryController::class, 'categoryCreate'])->name('category.create');
+        Route::get('/admin/category-store', [CategoryController::class, 'categoryStore'])->name('category.store');
+
+        Route::get('/admin/form-create', [FormController::class, 'formCreate'])->name('form.create');
+        Route::get('/admin/form-store', [FormController::class, 'formStore'])->name('form.store');
+    });
 });
 
 Route::middleware('auth')->group(function () {

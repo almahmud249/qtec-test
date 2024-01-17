@@ -19,6 +19,24 @@
                     </p>
                 </a>
             </li>
+            @if(Auth()->user()->isSuperAdmin())
+            <li>
+                <a href="{{route('admin.category.create')}}">
+                    <p class="menu_link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="aside_link">Category</span>
+                    </p>
+                </a>
+            </li>
+                <li>
+                    <a href="{{route('admin.form.create')}}">
+                        <p class="menu_link">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="aside_link">Dynamic Form</span>
+                        </p>
+                    </a>
+                </li>
+            @endif
         </ul>
     </aside>
 </div>
