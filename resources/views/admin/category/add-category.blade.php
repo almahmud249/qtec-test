@@ -28,6 +28,7 @@
                     <th>SL</th>
                     <th>Name</th>
                     <th>Description</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -39,6 +40,10 @@
                         </td>
                         <td>
                             <span class="d-block">{{$cat->description}}</span>
+                        </td>
+                        <td>
+                            <a href="{{route('admin.category.delete', $cat->id)}}" method="get">
+                                <i class="fa-solid fa-trash"></i>                            </a>
                         </td>
                     </tr>
                 @endforeach

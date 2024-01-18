@@ -11,15 +11,16 @@
             <i style="display: none;" id="expand"  class="fa-solid mx-auto fa-arrow-right-long"></i>
         </div>
         <ul id="aside_link_wraper" class="link_wraper">
-            <li>
-                <a href="dashboard.html">
-                    <p class="menu_link">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="aside_link">Dashboard</span>
-                    </p>
-                </a>
-            </li>
+
             @if(Auth()->user()->isSuperAdmin())
+                <li>
+                    <a href="{{route('admin.dashboard')}}">
+                        <p class="menu_link">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="aside_link">Dashboard</span>
+                        </p>
+                    </a>
+                </li>
             <li>
                 <a href="{{route('admin.category.create')}}">
                     <p class="menu_link">
@@ -28,31 +29,41 @@
                     </p>
                 </a>
             </li>
+            <li>
+                <a href="{{route('admin.form.field.create')}}">
+                    <p class="menu_link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="aside_link">Form Structure</span>
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('admin.user.list')}}">
+                    <p class="menu_link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="aside_link">User List</span>
+                    </p>
+                </a>
+            </li>
+            @endif
+            @if(Auth()->user()->isUser())
                 <li>
-                    <a href="{{route('admin.form.create')}}">
+                    <a href="{{route('user.dashboard')}}">
                         <p class="menu_link">
                             <i class="fa-solid fa-house"></i>
-                            <span class="aside_link">Dynamic Form</span>
+                            <span class="aside_link">Dashboard</span>
                         </p>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('admin.form.field.create')}}">
+                    <a href="{{route('user.list')}}">
                         <p class="menu_link">
                             <i class="fa-solid fa-house"></i>
-                            <span class="aside_link">Form Structure</span>
+                            <span class="aside_link">List</span>
                         </p>
                     </a>
                 </li>
             @endif
-            <li>
-                <a href="{{route('user.submit.form')}}">
-                    <p class="menu_link">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="aside_link">Form Submission</span>
-                    </p>
-                </a>
-            </li>
         </ul>
     </aside>
 </div>

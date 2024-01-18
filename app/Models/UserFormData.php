@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FormField extends Model
+class UserFormData extends Model
 {
     use HasFactory;
 
-    protected $fillable=['category_id','form_data'];
-
-    protected $casts=[
-        'form_data' => 'array'
+    protected $fillable = ['category_id', 'value','user_id'];
+    protected $casts = [
+        'value' => 'array'
     ];
 
     public function category()
     {
-       return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

@@ -25,4 +25,10 @@ class CategoryController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function categoryDelete($id)
+    {
+        Category::where('id', $id)->delete();
+        return redirect()->back();
+    }
 }

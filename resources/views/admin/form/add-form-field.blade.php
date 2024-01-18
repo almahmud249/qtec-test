@@ -18,8 +18,8 @@
                                         <select class="js-example-theme-single js-states mb-2 form-control form_template"
                                                 id="form_template" name="form_template" onchange="getRate()" required>
                                             <option value="{{ null }}" selected disabled></option>
-                                            @foreach ($forms as $item)
-                                                <option value="{{ $item }}">{{ $item->name }}</option>
+                                            @foreach ($categories as $cat)
+                                                <option value="{{ $cat }}">{{ $cat->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -64,37 +64,33 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body card-body-paddding">
-                <div class="table_responsive">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>SL</th>
-                            <th>Template</th>
-                            <th>Category Name</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($form_fields as $key => $fields)
+                    <div class="table_responsive">
+                        <table>
+                            <thead>
                             <tr>
-                                <td>{{$key + 1}}</td>
-                                <td>
-                                    <span class="d-block">{{$fields->template->name}}</span>
-                                </td>
-                                <td>
-                                    <span class="d-block">{{$fields->template->category->name}}</span>
-                                </td>
-                                <td>
-                                    <a href="{{route('admin.view.form', $fields->id)}}" method="get">
-                                        <i
-                                            class="fa-solid fa-eye action_icon"></i>
-                                    </a>
-                                </td>
+                                <th>SL</th>
+                                <th>Category Name</th>
+                                <th>Action</th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                            @foreach($form_fields as $key => $fields)
+                                <tr>
+                                    <td>{{$key + 1}}</td>
+                                    <td>
+                                        <span class="d-block">{{$fields->category->name}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{route('admin.view.form', $fields->id)}}" method="get">
+                                            <i
+                                                class="fa-solid fa-eye action_icon"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
@@ -108,6 +104,8 @@
             let rowNumber = 1;
 
             $('#add-row-btn').click(function() {
+                var rowCount = $('.invoice_based_tbody tr').length;
+                rowNumber = rowNumber + rowCount;
                 var newRowHtml = '<tr>' +
                     '<td>' +
                     '<input type="text" class="form-control" name="fields[' + rowNumber + '][label]" placeholder="Label" value="" required>' +
@@ -126,6 +124,7 @@
             $('.invoice_based_tbody').on('click', '.delete-row-btn', function() {
                 $(this).closest('tr').remove();
             });
+
         });
 
         function getRate() {
@@ -133,19 +132,23 @@
             $('.invoice_based_tbody').html(null);
             let rowNumber = 0;
 
-            if (form_template) {
-                var newRowHtml = '<tr>' +
-                    '<td>' +
-                    '<input type="text" class="form-control" name="fields[' + rowNumber + '][label]" placeholder="Label" value="" required>' +
-                    '</td>' +
-                    '<td>' +
-                    '<input type="text" class="form-control" name="fields[' + rowNumber + '][type]" placeholder="Type" value="" required>' +
-                    '</td>' +
-                    '<td>' +
-                    '<button type="button" class="btn btn-outline-danger delete-row-btn">Delete</button>' +
-                    '</td>' +
-                    '</tr>';
-                $('.invoice_based_tbody').append(newRowHtml);
+            if (form_template && form_template.template) {
+                $.each(form_template.template.form_data, function(index, order) {
+                    var newRowHtml = '<tr>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" name="fields[' + rowNumber + '][label]" placeholder="Label" value="'+ order.label +'" required>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" class="form-control" name="fields[' + rowNumber + '][type]" placeholder="Type" value="'+ order.type +'" required>' +
+                        '</td>' +
+                        '<td>' +
+                        '<button type="button" class="btn btn-outline-danger delete-row-btn">Delete</button>' +
+                        '</td>' +
+                        '</tr>';
+
+                    $('.invoice_based_tbody').append(newRowHtml);
+                    rowNumber++;
+                });
             }
         }
     </script>

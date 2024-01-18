@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('form_fields', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('form_template_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('form_data');
             $table->timestamps();
 
-            $table->foreign('form_template_id')->references('id')->on('form_fields')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

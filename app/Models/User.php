@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->hasRole(self::USER_ROLE);
     }
+
+    public function userFormData()
+    {
+        return $this->hasMany(UserFormData::class);
+    }
 }
