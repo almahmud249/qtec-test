@@ -9,7 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = [
+        'name',
+        'period',
+        'location',
+        'nature_of_contract',
+        'type_of_project',
+        'no_of_workers'
+    ];
 
     public function template()
     {

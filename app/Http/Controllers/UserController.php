@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\FormField;
 use App\Models\FormTemplate;
+use App\Models\Setting;
 use App\Models\User;
 use App\Models\UserFormData;
 use Illuminate\Http\Request;
@@ -62,5 +64,32 @@ class UserController extends Controller
     {
         $all_data = User::with('userFormData','userFormData.category')->where('id', \auth()->user()->id)->first();
         return view('user.index', compact('all_data'));
+    }
+
+    public function clients()
+    {
+        $clients = Category::all();
+        return view('layouts.user.clients', compact('clients'));
+    }
+
+    public function license()
+    {
+        return view('layouts.user.license');
+    }
+
+    public function gallery()
+    {
+        $galleries = Setting::where('type', 'gallery')->get();
+        return view('layouts.user.gallery', compact('galleries'));
+    }
+    public function contact()
+    {
+        return view('layouts.user.contact');
+    }
+
+    public function contactStore(Request $request)
+    {
+        Contact::create($request->all());
+        return redirect()->back();
     }
 }

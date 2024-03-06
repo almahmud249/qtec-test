@@ -25,7 +25,15 @@
                 <a href="{{route('admin.category.create')}}">
                     <p class="menu_link">
                         <i class="fa-solid fa-house"></i>
-                        <span class="aside_link">Category</span>
+                        <span class="aside_link">Clients</span>
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('admin.gallery.create')}}">
+                    <p class="menu_link">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="aside_link">Gallery</span>
                     </p>
                 </a>
             </li>
@@ -33,7 +41,7 @@
                 <a href="{{route('admin.form.field.create')}}">
                     <p class="menu_link">
                         <i class="fa-solid fa-house"></i>
-                        <span class="aside_link">Form Structure</span>
+                        <span class="aside_link">Contact List</span>
                     </p>
                 </a>
             </li>

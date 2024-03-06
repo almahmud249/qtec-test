@@ -18,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/', function () {
+    return view('layouts.user.home');
+})->name('home');
 
 Route::middleware(['auth.check'])->group(function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+
 
     Route::group(['as' => 'user.'], function () {
         Route::get('/user/dashboard', [UserController::class, 'userDashboard'])->name('dashboard');
@@ -35,9 +35,12 @@ Route::middleware(['auth.check'])->group(function () {
     Route::group(['as' => 'admin.'], function () {
         Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('dashboard');
 
-        Route::get('/admin/category-create', [CategoryController::class, 'categoryCreate'])->name('category.create');
-        Route::get('/admin/category-store', [CategoryController::class, 'categoryStore'])->name('category.store');
-        Route::get('/admin/category-store/{id}', [CategoryController::class, 'categoryDelete'])->name('category.delete');
+        Route::get('/admin/client-create', [CategoryController::class, 'categoryCreate'])->name('category.create');
+        Route::get('/admin/client-store', [CategoryController::class, 'categoryStore'])->name('category.store');
+        Route::get('/admin/client-store/{id}', [CategoryController::class, 'categoryDelete'])->name('category.delete');
+
+        Route::get('/admin/gallery-create', [CategoryController::class, 'galleryCreate'])->name('gallery.create');
+        Route::post('/admin/gallery-store', [CategoryController::class, 'galleryStore'])->name('gallery.store');
 
         Route::get('/admin/form-create', [FormController::class, 'formCreate'])->name('form.create');
         Route::get('/admin/form-store', [FormController::class, 'formStore'])->name('form.store');
@@ -51,7 +54,11 @@ Route::middleware(['auth.check'])->group(function () {
 
     });
 });
-
+Route::get('/clients', [UserController::class, 'clients'])->name('clients');
+Route::get('/license', [UserController::class, 'license'])->name('license');
+Route::get('/gallery', [UserController::class, 'gallery'])->name('gallery');
+Route::get('/contact', [UserController::class, 'contact'])->name('contact');
+Route::post('/contact-store', [UserController::class, 'contactStore'])->name('contact.store');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
