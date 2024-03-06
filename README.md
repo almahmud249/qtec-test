@@ -6,10 +6,10 @@ Project setup
 
 Follow the instructions below to setup the project quickly:
 
--   Clone the repo: ``git clone https://github.com/curiousteambd/mammasitter.git``
--   Run ``cd mammasitter`` to the newly created ``/mammasitter`` directory
+-   Clone the repo: ``git clone https://github.com/almahmud249/qtec-task.git``
+-   Run ``cd qtect-task``
 -   Run ``composer install`` command
--   Run ``yarn install`` or ``npm install`` command (if you've front-end dependencies)
+-   Run ``yarn install`` or ``npm install`` command
 -   Run ``cp .env.example .env`` command
 -   Setup your database and update ``.env`` file accordingly
 -   Run ``php artisan migrate`` command
@@ -23,16 +23,10 @@ Follow the instructions below to setup the project quickly:
 Release Information
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `Release Page
-<https://github.com/curiousteambd/mammasitter/releases>`_ page.
-
+This repo contains in-development code for exam test.
 **************************
 Changelog and New Features
 **************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/curiousteambd/mammasitter/blob/master/changelog.rst>`_.
 
 *******************
 Server Requirements
@@ -59,6 +53,6 @@ The web application has a few system requirements. You should ensure that your w
 Installation
 **************
 
-Please contact with curiousteam for installation.
+Please contact with almahmud.job49@gmail.com for installation.
 
-Report security issues to our `Gmail <mailto:curiousteambd@gmail.com.com>`_, thank you.
+Report security issues to our `Gmail <almahmud.job49@gmail.com>`_, thank you.
