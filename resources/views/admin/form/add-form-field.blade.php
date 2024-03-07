@@ -10,22 +10,19 @@
                             <thead>
                             <tr>
                                 <th>SL</th>
-                                <th>Category Name</th>
-                                <th>Action</th>
+                                <th>Email</th>
+                                <th>Phone</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($form_fields as $key => $fields)
+                            @foreach($contacts as $key => $contact)
                                 <tr>
                                     <td>{{$key + 1}}</td>
                                     <td>
-                                        <span class="d-block">{{$fields->category->name}}</span>
+                                        <span class="d-block">{{$contact->email}}</span>
                                     </td>
                                     <td>
-                                        <a href="{{route('admin.view.form', $fields->id)}}" method="get">
-                                            <i
-                                                class="fa-solid fa-eye action_icon"></i>
-                                        </a>
+                                        <span class="d-block">{{$contact->phone}}</span>
                                     </td>
                                 </tr>
                             @endforeach

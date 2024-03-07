@@ -46,6 +46,11 @@
               +88 01317750243</span>
                     <br/>
                     <span>
+                          <span>
+              <img src="./assets/images/nav-footer-img/phone-call.png" alt="Icon phone call" class="contactIcon"/>
+              02226664557</span>
+                    <br/>
+                    <span>
             <img src="./assets/images/nav-footer-img/logos_google-gmail.png" alt="Icon google-mail"
                  class="contactIcon"/>
             fnmairinternational79@gmail.com

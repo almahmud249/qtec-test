@@ -14,7 +14,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <ul class="collapse navbar-collapse ms-auto p-2 h-100 m-0 p-lg-0 bg-light" id="navbarSupportedContent">
+                <ul class="collapse navbar-collapse ms-auto p-2 h-100 m-0 p-lg-0 bg-light show" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{url('/')}}">Home</a>

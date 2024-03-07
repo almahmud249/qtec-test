@@ -8,65 +8,14 @@
                     <h1 class="fw-bold">Fnm air international Ltd</h1>
                     <!-- <h4 class="fw-bold">Software Development Comapny</h4> -->
                     <p>
-                        Flight booking, cheap air tickets, domestic flights, international flights,  Hotels, Travel all around the world
+                        We had provided more than 1,00,0 workers of various sectors to our clients in
                         <br />
-                        Holiday Packages, airline ticket, discount tickets, Air Tickets.
+                        Kuwait, K.S.A, U.A.E, Iraq, Qatar, Bahrain, Brunei, Oman, Mauritius and Malaysia.
                     </p>
                 </div>
             </div>
         </div>
         <!--CARD-->
-        <div class="card-sec mt-5 ">
-            <div class="container  text-center">
-                <div class="box time shadow-lg bg-body">
-                    <img src="./assets/images/home-img/time.png" class="img-fluid" alt="time" />
-                    <div class="info">
-                        <h5 class="mt-lg-3 mt-0 fw-bold">Air Tickets</h5>
-                        <p>
-                            We are Always here for you! Knock us on Messenger anytime or Call our Hotline (10AM - 10PM).
-                        </p>
-                    </div>
-                </div>
-                <div class="box deploy shadow-lg bg-body">
-                    <img src="./assets/images/home-img/deploy.png" class="img-fluid" alt="" />
-                    <div class="info">
-                        <h5 class="mt-3 fw-bold">International Tickets</h5>
-                        <p class="text-center">
-                            We are Always here for you! Knock us on Messenger anytime or Call our Hotline (10AM - 10PM).
-                        </p>
-                    </div>
-                </div>
-                <div class="box easy shadow-lg bg-body">
-                    <img src="./assets/images/home-img/easy.png" class="img-fluid" alt="" />
-                    <div class="info">
-                        <h5 class="mt-3 fw-bold">Hotels</h5>
-                        <p>
-                            We are Always here for you! Knock us on Messenger anytime or Call our Hotline (10AM - 10PM).
-                        </p>
-                    </div>
-                </div>
-                <div class="box ui shadow-lg bg-body">
-                    <img src="./assets/images/home-img/ui.png" class="img-fluid" alt="" />
-                    <div class="info">
-                        <h5 class="mt-3 fw-bold">Travel</h5>
-                        <p>
-                            We are Always here for you! Knock us on Messenger anytime or Call our Hotline (10AM - 10PM).
-                        </p>
-                    </div>
-                </div>
-                <div class="box friendly shadow-lg bg-body">
-                    <img src="./assets/images/home-img/friendly.png" class="img-fluid" alt="" />
-                    <div class="info">
-                        <h5 class="mt-3 fw-bold">Holy days Packages</h5>
-                        <p>
-                            We are Always here for you! Knock us on Messenger anytime or Call our Hotline (10AM - 10PM).
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <!--Testimonial Carousal-->
         <div class="container">
             <!-- about section-1  -->
@@ -82,7 +31,7 @@
                                 <strong>Fnm air international</strong> is a Government authorized Manpower
                                 Recruiting Agent Operating in Bangladesh having liaison offices
                                 in India, Pakistan, Nepal, U.A.E. and Malaysia. We are involved in
-                                this trade for last 33 years. Bangladesh is renowned for its large reserve
+                                this trade for last 5 years. Bangladesh is renowned for its large reserve
                                 of highly skilled, semi-skilled and unskilled manpower. Every year a considerable number of
                                 Manpower of different categories are being hired by the overseas employers
                                 for smooth and efficient running of their projects.
@@ -122,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <section class="customer_logo our-client-wrapper">
+        <section class="customer_logo our-client-wrapper mb-5">
             <div class="btv">
                 <img src="https://www.alislamoverseas.com/images/use.jpg" alt="btv logo">
                 <small>UAE</small>
@@ -144,14 +93,45 @@
                 <small>OMAN</small>
             </div>
         </section>
-        <section class="container">
-            <!--   Our Team -->
-            <section>
-                <h1 class="text-center font-effect-outline our-team">
 
+        <div class="tests mb-lg-5 my-5 my-lg-0 mt-8">
+            <div class="testss_heading">
+                <h1>Message From Managing Director</h1>
+                <div class="tests-border">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class=" testimonial-carousel-wraper">
+                            <div class="clients-pic">
+                                <img src="./assets/images/home-img/test1.jpeg" class="img" alt="CEO" />
+                            </div>
+                            <div class="clients-title">
+                                <p>
+                                    Dear Sir, We have the pleasure to introduce ourselves as a Government authorized
+                                    Manpower Recruiting Agent Operating in Bangladesh having liaison offices
+                                    in India, Pakistan, Nepal, Malaysia, UAE and Qatar. We are involved in this
+                                    trade for last 5 years. Bangladesh is renowned for its large reserve of highly skilled, semi-skilled and unskilled manpower.
+                                </p>
+                                <h3>Sohidul Islam Forhad</h3>
+                                <h4>Managing Director</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="mb-5">
+            <!--   Our Team -->
+            <section class="section-container">
+                <h1 class="text-center font-effect-outline our-team">
                 </h1>
-                <section>
-                    <div class="text-center diamond-content">
+                <section class="">
+                    <div class="diamond-content">
                         <div class="all-members  rounded shadow rainbow-box">
                             <img src="https://www.alislamoverseas.com/images/icon1.png" width="55px" alt="all-members">
                             <small>Recruiting License No - 1879</small>

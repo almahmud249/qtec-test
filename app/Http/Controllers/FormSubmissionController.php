@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\FormField;
 use App\Models\FormTemplate;
 use App\Models\User;
@@ -14,9 +15,9 @@ class FormSubmissionController extends Controller
 {
     public function formFieldCreate(Request $request)
     {
-        $categories = Category::with('template')->get();
+        $contacts = Contact::all();
         $form_fields = FormField::with('category')->get();
-        return view('admin.form.add-form-field', compact('form_fields', 'categories'));
+        return view('admin.form.add-form-field', compact('form_fields', 'contacts'));
     }
 
     public function formFieldStore(Request $request)

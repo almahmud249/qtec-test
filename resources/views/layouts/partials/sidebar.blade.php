@@ -45,14 +45,14 @@
                     </p>
                 </a>
             </li>
-            <li>
-                <a href="{{route('admin.user.list')}}">
-                    <p class="menu_link">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="aside_link">User List</span>
-                    </p>
-                </a>
-            </li>
+{{--            <li>--}}
+{{--                <a href="{{route('admin.user.list')}}">--}}
+{{--                    <p class="menu_link">--}}
+{{--                        <i class="fa-solid fa-house"></i>--}}
+{{--                        <span class="aside_link">User List</span>--}}
+{{--                    </p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             @endif
             @if(Auth()->user()->isUser())
                 <li>
